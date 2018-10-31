@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html id="hp4" lang="en">
+<head>
+    <link rel="stylesheet" href="style.css?version=2.0">
+    <link rel="stylesheet" href="tel_version.css?version=2.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+</head>
+<body id="page4">
+<div id="navp4" class="test">
+    <nav>
+        <ul>
+            <li><a href="index.html?version=2.0">Home</a></li>
+            <li><a href="overmij.html?version=2.0">Over Mij</a></li>
+            <li><a href="mijnopleiding.html?version=2.0">Mijn Opleiding</a></li>
+            <li><a href="Contact.html?version=2.0">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="overmij.html">Over Mij</a>
+    <a href="mijnopleiding.html">Mijn Opleiding</a>
+    <a href="Contact.html">Contact</a>
+</div>
+<!-- sidebar opener -->
+<img src="icon/navico.png" id="navopen" onclick="openNav()" alt=""/>
+
+<div class="mainsec" id="mainsec">
+
+
+    <div id="bg" class="bg">
+
+        <div class="centering">
+            <div class="card">
+                <div class="front"><img src="./images/karam.jpg" width="300" height="400" alt=""></div>
+                <div class="back">
+                    <div class="details">
+                        <h2>Karam Mohieddin</h2>
+                        <span>Junior Designer</span>
+                        <div class="social-icons">
+                            <a href="https://www.fb.com/karam.mh14"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/karam_mohialdeen/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.snapchat.com/add/karam152"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <main><h1>Voor meer informatie, graag vraag ik u om dit formulier in te vullen</h1></main>
+
+        <form action="" method="post">
+            <div class="inputs">
+                <label for="voornaame">voornaam: </label>
+                <input id="voornaame" type="text"  placeholder="Voornaam Hier">
+            </div>
+            <div class="inputs">
+                <label for="achternaam">Achternaam: </label>
+                <input id="achternaam" type="text"  placeholder="Achternaam Hier">
+            </div>
+            <div class="inputs">
+                <label for="Telefoonnummer">Telefoonnummer: </label>
+                <input id="Telefoonnummer" type="text"  placeholder="Telefoonnummer Hier">
+            </div>
+            <div class="inputs">
+                <label for="Email">Email: </label>
+                <input id="Email" type="text"  placeholder="Email Hier">
+            </div>
+            <div class="vraags">
+                <label for="vraag">Leg kort uit wat u aan mij wilt vragen</label>
+                <textarea name="vraag" id="vraag" cols="30" rows="5"></textarea>
+                <input type="submit" value="Send">
+            </div>
+
+        </form>
+    </div>
+
+
+</div>
+
+
+<footer>Copyright © 2018 by Karam Mohieddin. All rights reserved.</footer>
+
+
+
+
+</body>
+<script>
+
+
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navp4").style.top = "0";
+        } else {
+            document.getElementById("navp4").style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+</html>

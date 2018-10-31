@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css?version=2.0">
+    <link rel="stylesheet" href="tel_version.css?version=2.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Over Mij</title>
+</head>
+<body id="page2">
+<div id="navp2" class="test">
+<nav>
+    <ul>
+        <li><a href="index.html?version=2.0">Home</a></li>
+        <li><a href="overmij.html?version=2.0">Over Mij</a></li>
+        <li><a href="mijnopleiding.html?version=2.0">Mijn Opleiding</a></li>
+        <li><a href="Contact.html?version=2.0">Contact</a></li>
+    </ul>
+</nav>
+</div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="overmij.html">Over Mij</a>
+    <a href="mijnopleiding.html">Mijn Opleiding</a>
+    <a href="Contact.html">Contact</a>
+</div>
+
+<!-- sidebar opener -->
+<img src="icon/navico.png" id="navopen" onclick="openNav()" alt="" >
+<header>
+    <div id="info" class="info">
+        <span class="name">Karam Mohieddin</span>
+        <span class="name">|</span>
+        <span class="skills">Over Mij</span>
+    </div>
+</header>
+
+
+<main>
+    <h1 class="Hi">Hi, I'm karam !</h1>
+    <div id="portrait" class="portrait">
+        <img id="foto"
+             src=./images/karam2.jpg alt="">
+    </div>
+    <div  class="infot">
+        <p>Hi! Mijn naam is Karam. Ik ben 18 jaar oud en ik hou van computers.<br><br>
+            Verder ben ik een Junior web designer, Graphic designer en een fotograaf! <br><br>
+            Ik Kan 4 verschillende talen spreken en ik ben van plan om nog een 5de taal te gaan leren. <br><br>
+            Mijn afkomst is Syrische en ik woon in Nederland sinds begin 2016
+        </p>
+    </div>
+
+
+
+</main>
+<hr>
+<h2 class="wkid">Mijn Hobby's</h2>
+<div id="mijnskills" class="mijnskills">
+    <div    id="logovoorbeeld" class="logovoorbeeld">
+        <img id="logo" src="images/logo.gif" alt="Avatar" class="image">
+        <span class="logosm">Logo's Maken</span>
+        <span class="logotxt">In mijn vrije tijd teken ik vaak nieuwe logo's , daarna probeer ik deze logo's digitaal op mijn computer te maken</span>
+    </div>
+    <div id="fotovoorbeeld" class="fotovoorbeeld">
+        <img id="fotografie" class="fotografie" src="images/fotografie.jpg" alt="">
+        <span class="fotom">Fotografie</span>
+        <span class="fototxt">Een andere hobby van mij is mensen fotograferen.Ik hou echt van fotografie en daarom vind ik het leuk om voor mensen foto's te gaan maken</span>
+    </div>
+
+</div>
+
+<footer>Copyright © 2018 by Karam Mohieddin. All rights reserved.</footer>
+<script>
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navp2").style.top = "0";
+        } else {
+            document.getElementById("navp2").style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Mijn Opleiding</title>
+    <link rel="stylesheet" href="style.css?version=2.0">
+    <link rel="stylesheet" href="tel_version.css?version=2.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body id="page3">
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="overmij.html">Over Mij</a>
+    <a href="mijnopleiding.html">Mijn Opleiding</a>
+    <a href="Contact.html">Contact</a>
+</div>
+<!-- sidebar opener -->
+<img src="icon/navico.png" id="navopen" onclick="openNav()" alt=""/>
+
+<header>
+    <div id="info" class="info">
+        <span id="name" class="name">Karam Mohieddin</span>
+        <span class="name">|</span>
+        <span id="skills" class="skills">Mijn Opleiding</span>
+    </div>
+</header>
+
+<div class="intro">
+    <img id="karam3" class="karam3" src="./images/karam3.jpg" alt="">
+    <p class="pq">“Truth can only be found in one place: the code.” <br><br>
+        Ik ben een student van Techniek College Rotterdam, opleiding applicatie en mediaontwikkelaar.<br><br>
+        In Mijn opleiding leer ik hoe ik een website moet bouwen met behulp van front-end talen Html, CSS en Javascript.
+    </p>
+
+    <!--CHECK THE UPCOMING DIV-->
+    <hr>
+</div>
+
+<div class="flexbox">
+    <!--LOOK UNDER THE END OF HTML-->
+    <div class="tcr2">
+        <img id="tcr2" src="images/tcr2.jpg" alt="">
+        <label for="tcr2">Ik studeer in Techniek College Rotterdam</label>
+    </div>
+    <div class="tcr1">
+        <img id="tcr1" src="images/tcr1.jpg" alt="">
+        <label for="tcr1">Locatie Prins Alexanderlaan 55</label>
+    </div>
+
+
+</div>
+<div class="tabel" width="100%">
+    <table class="school">
+        <legend>Wat Heb ik tijdens school perioden geleerd</legend>
+        <tr>
+            <th>Periode 1</th>
+            <th>Antaal dagen\weken bezig</th>
+
+        </tr>
+        <tr>
+            <td>Introductie Html/Css</td>
+            <td>1.5 week</td>
+
+        </tr>
+
+        <tr>
+            <td>Blog Maken</td>
+            <td>3 Dagen</td>
+
+        </tr>
+        <tr>
+            <td>Image Gallery</td>
+            <td>1 Dag</td>
+
+        </tr>
+        <tr>
+            <td>Adres Technieken</td>
+            <td>1 dag</td>
+        </tr>
+        <tr>
+            <td>Formulier Maken</td>
+            <td>3 Dagen</td>
+
+        </tr>
+        <tr>
+            <td>Tabel Maken</td>
+            <td>2 Dagen</td>
+
+        </tr>
+        <tr>
+            <th>Periode 2</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<footer>Copyright © 2018 by Karam Mohieddin. All rights reserved.</footer>
+<div id="navp3" class="Nav-bar">
+    <div class="area"></div>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a href="index.html?version=2.0">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">Home</span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a href="overmij.html?version=2.0">
+                    <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="nav-text">
+                            Over Mij
+                        </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="mijnopleiding.html?version=2.0">
+                    <i class="fa fa-laptop fa-2x"></i>
+                    <span class="nav-text">
+                            Mijn Opleiding
+                        </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a href="Contact.html?version=2.0">
+                    <i class="fa fa-address-card fa-2x"></i>
+                    <span class="nav-text">
+                            Contact
+                        </span>
+                </a>
+
+            </li>
+
+
+        </ul>
+    </nav>
+</div>
+<script>
+
+
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navp3").style.top = "0";
+        } else {
+            document.getElementById("navp3").style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+</body>
+</html>
+<!--FIND NEXT IN STYLE.CSS #page2 flexbox-->
