@@ -103,6 +103,10 @@ nav {
     background-color: gray;
     color: white;
 }
+#page1 .cv
+{
+    float: right;
+}
 
 /*navigation bar Page 1 ends here*/
 
@@ -482,7 +486,7 @@ nav {
     height: 100%;
 }
 
-/*End header Page3 */
+/*End nav Page3 */
 
 /*Header pag3*/
 #page3 header {
@@ -523,7 +527,7 @@ nav {
     margin: 0 auto;
 }
 
-/*Header pag3*/
+/* end Header page 3*/
 /*Easteregg starts here*/
 #page3 .intro {
     padding-left: 10%;
