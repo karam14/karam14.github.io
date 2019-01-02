@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <title>My study</title>
+    <link rel="stylesheet" href="style.css?version=2.0">
+    <link rel="stylesheet" href="tel_version.css?version=2.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body id="page3">
+
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="overmij.html">About me</a>
+    <a href="mijnopleiding.html">My study</a>
+    <a href="Contact.html">Contact</a>
+</div>
+<!-- sidebar opener -->
+<img src="icon/navico.png" id="navopen" onclick="openNav()" alt=""/>
+
+<header>
+    <div id="info" class="info">
+        <span id="name" class="name">Karam Mohieddin</span>
+        <span class="name">|</span>
+        <span id="skills" class="skills">My study</span>
+    </div>
+</header>
+
+<div class="intro">
+    <img id="karam3" class="karam3" src="./images/karam3.jpg" alt="">
+    <p class="pq">“Truth can only be found in one place: the code.” <br><br>
+        I'm a student of Techniek College Rotterdam, following the courses of applications en media development<br><br>
+        In My study I learn how to build a website using the front-end languages HTML, CSS , Javascript and back-end PHP.
+    </p>
+
+    <!--CHECK THE UPCOMING DIV-->
+    <hr>
+</div>
+
+<div class="flexbox">
+    <!--LOOK UNDER THE END OF HTML-->
+    <div class="tcr2">
+        <img id="tcr2" src="images/tcr2.jpg" alt="">
+        <span>I study in Techniek College Rotterdam</span>
+    </div>
+    <div class="tcr1">
+        <img id="tcr1" src="images/tcr1.jpg" alt="">
+        <span>Location Prins Alexanderlaan 55</span>
+    </div>
+
+
+</div>
+
+<div class="tabel">
+
+    <table class="school">
+        <caption> Things I learned during the courses</caption>
+        <tr>
+            <th>Period 1</th>
+            <th>Days\weeks</th>
+
+        </tr>
+        <tr>
+            <td>Introduction Html/Css</td>
+            <td>1.5 week</td>
+
+        </tr>
+
+        <tr>
+            <td>First Blog</td>
+            <td>3 Days</td>
+
+        </tr>
+        <tr>
+            <td>Image Gallery</td>
+            <td>1 Day</td>
+
+        </tr>
+        <tr>
+            <td>HTML tags</td>
+            <td>1 dag</td>
+        </tr>
+        <tr>
+            <td>Designing Forms</td>
+            <td>3 Days</td>
+
+        </tr>
+        <tr>
+            <td>Designing tables</td>
+            <td>2 Days</td>
+
+        </tr>
+        <tr>
+            <th colspan="2">Period 2</th>
+        </tr>
+        <tr>
+            <td>Introduction Javascript</td>
+            <td>2 Days</td>
+
+        </tr>
+        <tr>
+            <td>learning the basics independently</td>
+            <td>1 week</td>
+        </tr>
+
+        <tr>
+            <td>End Project , traffic intersection</td>
+            <td>3 Days</td>
+        </tr>
+        <tr>
+            <td>Introduction PHP</td>
+            <td>1 Day</td>
+        </tr>
+        <tr>
+            <td>
+                Independent learning basics
+            </td>
+            <td>1 Week</td>
+        </tr>
+        <tr>
+            <td>Ending Project , Garage menu</td>
+            <td>3 Days</td>
+        </tr>
+        <tr>
+            <th colspan="2">Period 3 and 4 ~~ still in progress</th>
+        </tr>
+    </table>
+</div>
+<div class="projects" id="projects">
+    <div id="javacontainer">
+    <a href="javascript%20game/index.html"> <img src="images/java%20game.PNG" alt="" id="javafoto" onclick=""></a>
+    <span>Javascript game</span>
+    </div>
+    <div id="javacontainer2">
+    <a href="cross/crossing.html"> <img src="images/cross.PNG" alt="" id="javafoto2" onclick=""></a>
+    <span>Traffic intersection</span>
+    </div>
+</div>
+<footer>Copyright © 2018 by Karam Mohieddin. All rights reserved.</footer>
+<div id="navp3" class="Nav-bar">
+    <div class="area"></div>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a href="index.html?version=2.0">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">Home</span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a href="overmij.html?version=2.0">
+                    <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="nav-text">
+                            About me
+                        </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="mijnopleiding.html?version=2.0">
+                    <i class="fa fa-laptop fa-2x"></i>
+                    <span class="nav-text">
+                            My study
+                        </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a href="Contact.html?version=2.0">
+                    <i class="fa fa-address-card fa-2x"></i>
+                    <span class="nav-text">
+                            Contact
+                        </span>
+                </a>
+
+
+            <li class="has-subnav">
+                <a href="CV2.pdf" download>
+                    <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="nav-text">
+                            My CV
+                        </span>
+                </a>
+
+            </li>
+
+
+
+        </ul>
+    </nav>
+</div>
+<script>
+
+
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navp3").style.top = "0";
+        } else {
+            document.getElementById("navp3").style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+</body>
+</html>
+<!--FIND NEXT IN STYLE.CSS #page2 flexbox-->
