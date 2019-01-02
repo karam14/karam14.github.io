@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+body
+{
+    background-color: rgba(255, 188, 5, 1);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgba(195, 121, 29, 0.81);
+    border-radius: 500px;
+}
+
+/*.container div{*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+/*}*/
+/*healthbar styling*/
+.healthbar {
+    background-color: #52eb00;
+    color: #52eb00;
+}
+.healthbar::-webkit-progress-value {
+    background-color: #52eb00;
+}
+.healthred
+{
+    background-color: red;
+    color: red;
+}
+.healthred::-webkit-progress-value
+{
+    background-color: red;
+}
+.healthyellow
+{
+    background-color: yellow;
+    color: yellow;
+}
+.healthyellow::-webkit-progress-value
+{
+    background-color: yellow;
+}
+.healthorange
+{
+    background-color: orange;
+    color: orange;
+}
+.healthorange::-webkit-progress-value
+{
+    background-color: orange;
+    color: orange;
+}
+/*end healthbar styling*/
+
+span{
+    font-size: 25px;
+    font-family: 'Bungee', cursive;
+}
+.photoconainer
+{
+    margin: 0 auto;
+    width: 20%;
+}

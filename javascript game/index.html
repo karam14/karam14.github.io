@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+    <!--<div class="enemy">-->
+        <span>enemy</span>
+        <span id="enemyHealth">Health: </span>
+        <progress class="healthbar" value="100" max="100" id="healthbar"></progress>
+    <!--</div>-->
+    <!--<div class="player">-->
+        <span>player</span>
+        <span id="playerDamage">Damage per click : 5</span>
+        <span id="autoDamage">auto damage :0  per half second</span>
+        <span id="playerLevel">Playerlevel: </span>
+        <span id="playerXp">Player xp: </span>
+        <span id="coins"></span>
+    <div class="buttons">
+        <button id="button" onclick="upgrade()" disabled>upgrade hitrate !</button>
+        <button id="autoD" onclick="upgradeAuto()" disabled>Auto Damage 100 coins !</button>
+    </div>
+
+    <!--</div>-->
+</div>
+<div class="photoconainer">
+<img src="monsters/Monster%2001/idle.png" width="250px" height="300px" id="attackbtn" onclick="attack()">
+</div>
+
+</body>
+</html>

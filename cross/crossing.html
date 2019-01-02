@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Verkeer3</title>
+    <style>
+        body {
+            background-image: url("traffic/weg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h1>Verkeer compinatie 1</h1>
+    <input type="button" onclick="start()" value="start">
+    <input type="button" onclick="stop()" value="stop">
+    <input type="button" onclick="restart()" value="reset">
+    <input type="button" onclick="aanzetten()" value="aanzetten">
+    <input type="button" onclick="knipperen()" value="knipperen">
+    <input type="button" onclick="uitzetten()" value="uitzetten">
+    <img src="traffic/stopuit.png" alt="" id="stoplicht" width="50px" height="100px">
+    <img src="traffic/stopuit.png" alt="" id="stoplicht2" width="50px" height="100px">
+    <img src="traffic/stopuit.png" alt="" id="stoplicht3" width="50px" height="100px">
+    <img src="traffic/stopuit.png" alt="" id="stoplicht4" width="50px" height="100px">
+    <img id="auto" src="traffic/auto.png" alt="" width="60px" height="120px">
+    <img id="auto2" src="traffic/auto.png" alt="" width="60px" height="120px">
+    <img id="auto3" src="traffic/auto3.png" alt="" width="60px" height="120px">
+    <img id="auto4" src="traffic/police.png" alt="" width="60px" height="120px">
+    <script>
+        //inputs
+        var slir_lr1 = false;
+        var slir_lr2 = false;
+        var slir_bb = false;
+        var policeVoorrang = false;
+        var snelheid;
+        var snelheid2;
+        var snelheid3;
+        var snelheid4;
+        var rijden; //animation name is rijden
+        var auto = document.getElementById("auto");
+        var auto2 = document.getElementById("auto2");
+        var auto3 = document.getElementById("auto3");
+        var auto4 = document.getElementById("auto4");
+        var police; // police animation
+        var policeVT; // voorrang timer
+        var soundPlayer = new Audio('police.mp3'); //police sound
+        var werken; //first animation
+        var buitwerking; //second animation
+        var stoplicht = document.getElementById('stoplicht');
+        var stoplicht2 = document.getElementById('stoplicht2');
+        var stoplicht3 = document.getElementById('stoplicht3');
+        var stoplicht4 = document.getElementById('stoplicht4');
+        stoplicht.style.position = 'absolute';
+        stoplicht2.style.position = 'absolute';
+        stoplicht3.style.position = 'absolute';
+        stoplicht4.style.position = 'absolute';
+        stoplicht.style.left = '715px';
+        stoplicht.style.top = '610px';
+        stoplicht2.style.left = '460px';
+        stoplicht2.style.top = '180px';
+        stoplicht2.style.transform = "rotate(180deg)";
+        stoplicht3.style.left = '215px';
+        stoplicht3.style.top = '550px';
+        stoplicht3.style.transform = "rotate(90deg)";
+        stoplicht4.style.left = '1115px';
+        stoplicht4.style.top = '300px';
+        stoplicht4.style.transform = "rotate(270deg)";
+        auto.style.position = "absolute";
+        auto.style.left = "650px";
+        auto.style.top = "650px";
+        auto2.style.position = "absolute";
+        auto2.style.left = "548px";
+        auto2.style.top = "100px";
+        auto2.style.transform = "rotate(180deg)";
+        auto3.style.position = "absolute";
+        auto3.style.left = "150px";
+        auto3.style.top = "480px";
+        auto3.style.transform = "rotate(90deg)";
+        auto4.style.position = "absolute";
+        auto4.style.left = "1150px";
+        auto4.style.top = "370px";
+        auto4.style.transform = "rotate(270deg)";
+
+        //outputs
+        // function aanzetten() {
+        //     clearTimeout(buitwerking);
+        //     changeRed();
+        //     werken = setTimeout(changeRedGreen,4000); //change to yellow after 4 sec
+        //     werken = setTimeout(changeYellowRed,8000); // change to green after 8 sec
+        //     werken = setTimeout(aanzetten,10000); // restart after 10 sec
+        // }
+
+        function startpolice() {
+            policeVT = setTimeout(policefAan, 5000);
+            policeVT = setTimeout(policefUit, 11000);
+            policeVT = setTimeout(startpolice, 15000);
+        }
+        function aanzetten() {
+
+            startpolice();
+            clearTimeout(buitwerking);
+            changeRedGreen();
+            werken = setTimeout(changeRedYellow, 4000);
+            werken = setTimeout(changeRedRed, 6000);
+            werken = setTimeout(changeGreenRed, 8000);
+            werken = setTimeout(changeYellowRed, 12000);
+            werken = setTimeout(changeRedRed, 15000);
+            werken = setTimeout(aanzetten, 17000);
+        }
+
+        function policeuit() {
+            auto4.src = "traffic/police.png";
+
+        }
+
+        function policeaan() {
+            auto4.src = "traffic/police2.png"
+
+        }
+
+        function policefAan() {
+            policeVoorrang = true;
+            police = setTimeout(policeaan, 500);
+            police = setTimeout(policeuit, 1000);
+            police = setTimeout(policefAan, 1500);
+        }
+        function policefUit() {
+            policeVoorrang = false;
+            clearTimeout(policeVT);
+            clearTimeout(police);
+            policeuit();
+
+
+        }
+
+        function knipperen() {
+            clearTimeout(werken);
+            changeYellowYellow();
+            buitwerking = setTimeout(changeUit, 500); //turn off after half second
+            buitwerking = setTimeout(knipperen, 1000); // after 1 sec restart
+
+        }
+
+        function uitzetten() {
+            changeUit();
+            clearTimeout(werken);
+            clearTimeout(buitwerking);
+            slir_lr1 = false;
+            slir_lr2 = false;
+            slir_bb = false;
+
+
+        }
+
+        function changeRedGreen() {
+            slir_lr1 = false;
+            slir_lr2 = false;
+            slir_bb = true;
+            stoplicht.src = "traffic/stopred.png";
+            stoplicht2.src = "traffic/stopred.png";
+            stoplicht3.src = "traffic/stopgreen.png";
+            stoplicht4.src = "traffic/stopgreen.png";
+
+        }
+
+        function changeYellowYellow() {
+            slir_lr1 = false;
+            slir_lr2 = false;
+            slir_bb = false;
+            stoplicht.src = "traffic/stopyellow.png";
+            stoplicht2.src = "traffic/stopyellow.png";
+            stoplicht3.src = "traffic/stopyellow.png";
+            stoplicht4.src = "traffic/stopyellow.png";
+
+        }
+
+        function changeRedYellow() {
+            slir_lr1 = false;
+            slir_lr2 = false;
+            slir_bb = true;
+            stoplicht.src = "traffic/stopred.png";
+            stoplicht2.src = "traffic/stopred.png";
+            stoplicht3.src = "traffic/stopyellow.png";
+            stoplicht4.src = "traffic/stopyellow.png";
+        }
+
+        function changeYellowRed() {
+            slir_bb = false;
+            slir_lr1 = true;
+            slir_lr2 = true;
+            stoplicht.src = "traffic/stopyellow.png";
+            stoplicht2.src = "traffic/stopyellow.png";
+            stoplicht3.src = "traffic/stopred.png";
+            stoplicht4.src = "traffic/stopred.png";
+        }
+
+        function changeGreenRed() {
+            slir_lr1 = true;
+            slir_lr2 = true;
+            slir_bb = false;
+            stoplicht.src = "traffic/stopgreen.png";
+            stoplicht2.src = "traffic/stopgreen.png";
+            stoplicht3.src = "traffic/stopred.png";
+            stoplicht4.src = "traffic/stopred.png";
+        }
+
+        function changeRedRed() {
+            slir_lr1 = true;
+            slir_lr2 = true;
+            slir_bb = true;
+            stoplicht.src = "traffic/stopred.png";
+            stoplicht2.src = "traffic/stopred.png";
+            stoplicht3.src = "traffic/stopred.png";
+            stoplicht4.src = "traffic/stopred.png";
+        }
+
+        function changeUit() {
+
+            stoplicht.src = "traffic/stopuit.png";
+            stoplicht2.src = "traffic/stopuit.png";
+            stoplicht3.src = "traffic/stopuit.png";
+            stoplicht4.src = "traffic/stopuit.png";
+        }
+
+        function start() {
+            auto.style.top = parseInt(auto.style.top) - snelheid + 'px';
+            auto2.style.top = parseInt(auto2.style.top) + snelheid2 + 'px';
+            auto3.style.left = parseInt(auto3.style.left) + snelheid3 + 'px';
+            auto4.style.left = parseInt(auto4.style.left) - snelheid4 + 'px';
+            var y_auto1 = parseInt(auto.style.top);
+            var y_auto2 = parseInt(auto2.style.top);
+            var x_auto3 = parseInt(auto3.style.left);
+            var x_auto4 = parseInt(auto4.style.left);
+
+            rijden = setTimeout(start, 20); //om de 10msec auto rijden
+            if (parseInt(auto.style.top) < -140) {
+                auto.style.top = "850px";
+            }
+            if (parseInt(auto2.style.top) > 900) {
+                auto2.style.top = "-125px";
+            }
+            if (parseInt(auto3.style.left) > 1700) {
+                auto3.style.left = "-100px"
+            }
+            if (parseInt(auto4.style.left) < -200) {
+                auto4.style.left = "1500px"
+            }
+            if (policeVoorrang)
+            {
+                playSound();
+            }
+            else
+            {
+                StopSound();
+
+            }
+            if (slir_bb && y_auto1 == 650) {
+                snelheid = 0;
+
+            }
+            else if (policeVoorrang)
+            {
+                snelheid = 0;
+            }
+            else {
+                snelheid = 5;
+            }
+            if (slir_bb && y_auto2 == 120) {
+                snelheid2 = 0;
+
+            }
+            else if (policeVoorrang)
+            {
+                snelheid2 = 0;
+            }
+            else {
+                snelheid2 = 5;
+            }
+            if (slir_lr1 && x_auto3 == 150) {
+                snelheid3 = 0;
+            }
+            else {
+                snelheid3 = 5;
+            }
+            if (slir_lr2 && x_auto4 == 1150) {
+                snelheid4 = 0;
+            }
+            else if (policeVoorrang)
+            {
+                slir_lr2 = false;
+                snelheid4 = 5;
+            }
+            else {
+                snelheid4 = 5;
+            }
+        }
+
+        function stop() {
+            clearTimeout(rijden);
+        }
+
+        function restart() {
+            clearTimeout(rijden);
+            auto.style.top = "650px";
+            auto2.style.top = "100px";
+            auto3.style.left = "150px"
+        }
+        function playSound(){
+
+            soundPlayer.play();
+
+        }
+        function StopSound(){
+            soundPlayer.pause();
+            soundPlayer.currentTime = 0;
+        }
+    </script>
+</form>
+</body>
+</html>
