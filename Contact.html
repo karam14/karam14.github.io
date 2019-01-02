@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="hp4" lang="nl">
+<html id="hp4" lang="en">
 <head>
     <link rel="stylesheet" href="style.css?version=2.0">
     <link rel="stylesheet" href="tel_version.css?version=2.0">
@@ -13,18 +13,18 @@
     <nav>
         <ul>
             <li><a href="index.html?version=2.0">Home</a></li>
-            <li><a href="overmij.html?version=2.0">Over Mij</a></li>
-            <li><a href="mijnopleiding.html?version=2.0">Mijn Opleiding</a></li>
+            <li><a href="overmij.html?version=2.0">About me</a></li>
+            <li><a href="mijnopleiding.html?version=2.0">My study</a></li>
             <li><a href="Contact.html?version=2.0">Contact</a></li>
-            <li class="cv"><a href="CV2.pdf" download>Mijn CV</a></li>
+            <li class="cv"><a href="CV2.pdf" download>Resume</a></li>
         </ul>
     </nav>
 </div>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="index.html">Home</a>
-    <a href="overmij.html">Over Mij</a>
-    <a href="mijnopleiding.html">Mijn Opleiding</a>
+    <a href="overmij.html">About me</a>
+    <a href="mijnopleiding.html">My study</a>
     <a href="Contact.html">Contact</a>
 </div>
 <!-- sidebar opener -->
@@ -53,7 +53,7 @@
 
         </div>
         <form method="post" class="contact1-form" action="contact-form.php">
-            <span class="contact1-form-title">Neem contact met mij op !</span>
+            <span class="contact1-form-title">Contact me!</span>
 
             <div class="wrap-input1">
                 <input class="input1" type="text" name="name" placeholder="Name">
@@ -61,7 +61,7 @@
             </div>
 
             <div class="wrap-input1">
-                <input class="input1" type="text" name="email" placeholder="Email">
+                <input class="input1" type="email" name="email" placeholder="Email">
                 <span class="shadow-input1"></span>
             </div>
 
@@ -76,9 +76,9 @@
             </div>
 
             <div class="container-contact-form-button">
-                <button class="contact-form-button">
-						<span>Send Email   <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                </button>
+                <input value="Send Email" type="submit" class="contact-form-button" formaction="contact-form.php">
+						<!--<span>Send Email   <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>-->
+                </input>
             </div>
         </form>
     </div>
